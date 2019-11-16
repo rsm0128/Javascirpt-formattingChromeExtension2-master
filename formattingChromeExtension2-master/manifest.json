@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Formatting Formula",
+  "description": "Chrome Extension",
+  "version": "1.0",
+  "author": "@rsm0128",
+  "permissions": [
+    "activeTab",
+    "http://*/*",
+    "https://*/*",
+    "file:///*",
+    "storage"
+  ],
+  "content_scripts" : [
+    {
+      "matches": ["*://*.anaplan.com/*", "file://*/*"],
+      "js": ["jquery.js", "datatables.min.js", "constants.js", "module-highlighter.js", "module-colortheme.js", "module-grid.js", "module-logolink.js", "module-tooltip.js", "main.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_title": "Formatting",
+    "default_popup": "popup.html"
+  }
+}
